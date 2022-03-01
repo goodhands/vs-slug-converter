@@ -1,18 +1,19 @@
 {
-  	"name": "slug-converter",
+	"name": "slug-converter",
 	"displayName": "slug-converter",
 	"description": "A simple strings to slug converter",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "goodhands",
 	"repository": "https://github.com/goodhands/vs-code-slug",
 	"engines": {
 		"vscode": "^1.64.0"
 	},
 	"categories": [
-		"Formatters", "Snippets"
+		"Formatters",
+		"Snippets"
 	],
 	"activationEvents": [
-        "onCommand:slug-converter.Slugify"
+		"onCommand:slug-converter.Slugify"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
@@ -40,7 +41,7 @@
 		]
 	},
 	"scripts": {
-		"vscode:prepublish": "npm run package",
+		"vscode:prepublish": "standard-version && git push --follow-tags && npm run package",
 		"compile": "webpack",
 		"watch": "webpack --watch",
 		"package": "webpack --mode production --devtool hidden-source-map",
@@ -64,6 +65,7 @@
 		"ts-loader": "^9.2.6",
 		"webpack": "^5.69.1",
 		"webpack-cli": "^4.9.2",
-		"@vscode/test-electron": "^2.1.2"
+		"@vscode/test-electron": "^2.1.2",
+		"standard-version": "latest"
 	}
 }
