@@ -2,7 +2,7 @@
 	"name": "slug-converter",
 	"displayName": "slug-converter",
 	"description": "A simple strings to slug converter",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"publisher": "goodhands",
 	"repository": "https://github.com/goodhands/vs-code-slug",
 	"engines": {
