@@ -1,0 +1,69 @@
+{
+  	"name": "slug-converter",
+	"displayName": "slug-converter",
+	"description": "A simple strings to slug converter",
+	"version": "0.0.1",
+	"publisher": "goodhands",
+	"repository": "https://github.com/goodhands/vs-code-slug",
+	"engines": {
+		"vscode": "^1.64.0"
+	},
+	"categories": [
+		"Formatters", "Snippets"
+	],
+	"activationEvents": [
+        "onCommand:slug-converter.Slugify"
+	],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"menus": {
+			"editor/context": [
+				{
+					"command": "slug-converter.Slugify",
+					"group": "1_modification"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "slug-converter.Slugify",
+				"title": "Convert your strings to slug!"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "slug-converter.Slugify",
+				"key": "ctrl+shift+-",
+				"mac": "cmd+shift+-",
+				"when": "editorTextFocus"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run package",
+		"compile": "webpack",
+		"watch": "webpack --watch",
+		"package": "webpack --mode production --devtool hidden-source-map",
+		"compile-tests": "tsc -p . --outDir out",
+		"watch-tests": "tsc -p . -w --outDir out",
+		"pretest": "npm run compile-tests && npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.64.0",
+		"@types/glob": "^7.2.0",
+		"@types/mocha": "^9.1.0",
+		"@types/node": "14.x",
+		"@typescript-eslint/eslint-plugin": "^5.12.1",
+		"@typescript-esaslint/parser": "^5.12.1",
+		"eslint": "^8.9.0",
+		"glob": "^7.2.0",
+		"mocha": "^9.2.1",
+		"typescript": "^4.5.5",
+		"ts-loader": "^9.2.6",
+		"webpack": "^5.69.1",
+		"webpack-cli": "^4.9.2",
+		"@vscode/test-electron": "^2.1.2"
+	}
+}
